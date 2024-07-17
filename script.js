@@ -55,11 +55,13 @@ const inventors = [
 // - Use the Array.prototype.filter() method to create a new array.
 // - The new array, 'veryOldInventors', should only include inventors born between the years 1500 and 1599.
 
-let veryOldInventors = []
+//let veryOldInventors = []
 
 // Enter your solution code here:
 
-
+const veryOldInventors = inventors.filter((inventor) => {
+    return inventor.year < 1600 && inventor.year > 1500
+})
 
 // Check your return value:
 console.log('Exercise 1 My Result: ', veryOldInventors)
@@ -80,11 +82,13 @@ console.log('Exercise 1 Correct Result: ',
 // Hint:  Return a new object literal from the callback that looks something like { first: "First Name", last: "Last Name" }
 
 
-let inventorNames = []
+//let inventorNames = []
 
 // Enter your solution code here:
 
-
+const inventorNames = inventors.map((inventor) => {
+    return `First: ${inventor.first}, Last: ${inventor.last}`
+})
 
 // Check your return value:
 console.log('Exercise 2 My Result: ', inventorNames)
@@ -109,11 +113,13 @@ console.log('Exercise 2 Correct Result: ',
 
 // 3. Sort the inventors by birth date in ascending order (from those born furthest in the past to those born most recently).
 
-let sortedByBirthYear = []
+// let sortedByBirthYear = []
 
 // Enter your solution code here:
 
-
+const sortedByBirthYear = inventors.sort((a, b) => {
+    return a.year - b.year
+})
 
 // Check your return value:
 console.log('Exercise 3 My Result: ', sortedByBirthYear)
@@ -142,11 +148,13 @@ console.log('Exercise 3 Correct Result: ',
 // -  Utilize the Array.prototype.find() method to locate the object for the inventor named 'Ada'.
 // -  Assign the found inventor object to the variable 'inventorNamedAda'
 
-let inventorNamedAda = {}
+// let inventorNamedAda = {}
 
 // Enter you solution code here:
 
-
+const inventorNamedAda = inventors.find((inventor) => {
+    return inventor.first === `Ada`
+})
 
 // Check your return value:
 console.log('Exercise 4 My Result: ', inventorNamedAda)
@@ -160,11 +168,13 @@ console.log('Exercise 4 Correct Result: ', { first: 'Ada', last: 'Lovelace', yea
 // Hint: Use the String.prototype.split method to separate the first and last names. You can split the string using ', ' as the separator.
 // After splitting the names, rearrange them to the "First Last" format.
 
-let firstLast = []
+// let firstLast = []
 
 // Enter your solution code here:
 
-
+const firstLast = inventors.map((inventor) => {
+    return inventor.first 
+})
 
 // Check your return value:
 console.log('Exercise 5 My Result: ', firstLast)
