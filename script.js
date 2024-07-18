@@ -172,8 +172,9 @@ console.log('Exercise 4 Correct Result: ', { first: 'Ada', last: 'Lovelace', yea
 
 // Enter your solution code here:
 
-const firstLast = inventors.map((inventor) => {
-    return inventor.first 
+const firstLast = people.map((person) => {
+    person.split(",")
+    return person
 })
 
 // Check your return value:
@@ -231,11 +232,13 @@ console.log('Exercise 5 Correct Result: ',
 // - Use the Array.prototype.some() method to check if any person in the array is 18 years old or older.
 // - Store the result (true or false) in the variable 'isAdultPresent'. 
 
-let isAdultPresent = null
+// let isAdultPresent = null
 
 // Enter your solution code here:
 
-
+isAdultPresent = devs.some((dev) => {
+    return dev.year < 2006
+})
 
 // Check your return value:
 console.log('Exercise 6 My Result: ', isAdultPresent)
@@ -249,11 +252,13 @@ console.log('Exercise 6 Correct Result: ', true)
 // - Use the Array.prototype.every() method to verify if every individual in the array is at least 19 years old.
 // - Store the result (true or false) in the variable 'isEveryone19OrOlder'.
 
-let isEveryone19OrOlder = null
+// let isEveryone19OrOlder = null
 
 // Enter your solution code here:
 
-
+isEveryone19OrOlder = devs.every((dev) => {
+    return dev.year < 2005
+})
 
 // Check your return value:
 console.log('Exercise 7 My Result: ', isEveryone19OrOlder)
@@ -270,7 +275,9 @@ let commentById = {}
 
 // Enter your solution code here:
 
-
+commentById = comments.find((comment) => {
+    return comment.id === 823423
+})
 
 // Check your return value:
 console.log('Exercise 8 My Result: ', commentById)
@@ -286,7 +293,9 @@ let idx = null
 
 // Enter your solution code here:
 
-
+idx = comments.findIndex((comment) => {
+    return comment.id === 123523
+})
 
 // Check your return value:
 console.log('Exercise 9 My Result: ', idx)
